@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DCCFrontEnd</title>
+  <base href="/">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    var OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "1247426f-2d83-4c66-802e-8f8e2440b95f",
+      }),function() {
+        const user =  JSON.parse(localStorage.getItem('currentUser')) ;
+
+        OneSignal.sendTag("UserName", "usernamer");
+      };
+    });
+    OneSignal.push(function(isEnabled) {
+  if (isEnabled) {
+      // user has subscribed
+      OneSignal.getUserId( function(userId) {
+          console.log('player_id of the subscribed user is : ' + userId);
+          // Make a POST call to your server with the user ID        
+      });
+  }
+});
+
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<!-- Start of LiveChat (www.livechatinc.com) code -->
+<script type="text/javascript">
+  window.__lc = window.__lc || {};
+  window.__lc.license = 10896312;
+  (function() {
+    var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+    lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+  })();
+  </script>
+  <noscript>
+  <a href="https://www.livechatinc.com/chat-with/10896312/" rel="nofollow">Chat with us</a>,
+  powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>
+  </noscript>
+  
+  <!-- End of LiveChat code -->
+</html>

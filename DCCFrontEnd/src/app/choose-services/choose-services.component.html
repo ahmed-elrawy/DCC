@@ -1,0 +1,38 @@
+ 
+
+        <div class="example-loading-shade"
+        *ngIf="loading">
+        
+     <mat-spinner *ngIf="loading"></mat-spinner>
+    </div>
+<div class="mip">
+ 
+<section id="cards-view" class="container text-center">
+  <div class="container">
+      <div class="d">
+      <h2>What type of <strong  class="logo-caption"> </strong> ?</h2></div>
+      
+      <div class="row m-5 justify-content-center">
+          <div class="col-lg-2 col-md-4">
+              <div [routerLink]="['/doctors']" class="outer p-0">
+               <img class="img-fluid" src="././assets/p 6.jpg">
+                   <div class="y">
+                  <p class="font-weight-bold my-
+                            2">Doctors</p> </div>
+                  
+                   </div>  </div>
+           <div class="col-lg-2 col-md-4">
+              <div [routerLink]="['/diagnosis']" class="outer p-0">
+                  <img class="img-fluid" src="././assets/p 3.jpg">
+                  <div  class="m">
+                      <p class="font-weight-bold my-2"> Treatment</p></div>
+              </div>
+          </div>
+      </div>
+      
+      
+      <!-- <button class="btn bt rounded  border-white text-white"><a href="doctors.html"> Find</a></button> -->
+          
+          
+  </div></section>
+</div>

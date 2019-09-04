@@ -1,0 +1,79 @@
+[{
+
+        "DrugName": "Panadol",
+        "DrugTypeId": 1
+    },
+    {
+        "DrugName": "ASPIRIN",
+        "DrugTypeId": 1
+    },
+    {
+        "DrugName": "ALGONAL",
+        "DrugTypeId": 1
+    },
+    {
+        "DrugName": "KIDIPRIN CHEWABLE TABS 100MG",
+        "DrugTypeId": 1
+    },
+
+    {
+        "DrugName": "Adol",
+        "DrugTypeId": 1
+    },
+
+
+
+    {
+        "DrugName": "MUCOGEL",
+        "DrugTypeId": 5
+
+    },
+    {
+        "DrugName": "ALUGEL SUSP",
+        "DrugTypeId": 1
+    },
+    {
+        "DrugName": "DE-NOL 120MG TABS",
+        "DrugTypeId": 1
+    },
+    {
+        "DrugName": "PROCTOLAR CENTER SUPPOSITORY",
+        "DrugTypeId": 1
+    },
+    {
+        "DrugName": "Dimor",
+        "DrugTypeId": 1
+    } 
+
+
+    ,
+    {
+        "DrugName": "Premarin",
+        "DrugTypeId": 1
+    } 
+    ,
+    {
+        "DrugName": "ALENDRO",
+        "DrugTypeId": 1
+    } 
+    ,
+    {
+        "DrugName": "CALCITEC 100 I.U NASAL SPRAY ",
+        "DrugTypeId": 4
+    } 
+    ,
+    {
+        "DrugName": "CALCITEC 50 I.U NASAL SPRAY",
+        "DrugTypeId": 4
+    } 
+    ,
+    {
+        "DrugName": "DROLATE 70 MG FILM COATED TABLETS",
+        "DrugTypeId": 1
+    } 
+
+]
+
+
+ 
+ 

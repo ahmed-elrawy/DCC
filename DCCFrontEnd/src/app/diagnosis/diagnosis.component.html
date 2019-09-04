@@ -1,0 +1,321 @@
+<!-- <mat-form-field>
+  <mat-select (valueChange)="changeValue($event)" [(ngModel)]="chang1" placeholder="Choose Body Areas ">
+    <mat-option *ngFor="let bd of bodyAreas" [value]="bd.bodyAreasId">
+      {{bd.nameArea}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select (valueChange)="changeValue2($event)"   placeholder="Choose Symptoms ">
+      <mat-option *ngFor="let bd of syptoms" [value]="bd.symptomId">
+        {{bd.symptomName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-select (valueChange)="changeValue3($event)"   placeholder="Choose Drug ">
+        <mat-option *ngFor="let bd of drugs" [value]="bd.drugId">
+          {{bd.drugName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  <p>
+      composition: {{drug?.treatmentBulletin?.composition}}
+  </p>
+  <p>
+      indications: {{drug?.treatmentBulletin?.indications}}
+  </p>
+
+  <p>
+      dosing: {{drug?.treatmentBulletin?.dosing}}
+  </p>
+  <p>
+      sideEffects: {{drug?.treatmentBulletin?.sideEffects}}
+  </p>
+
+  
+  -->
+<!-- <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-4">
+      <mat-form-field>
+        <mat-select (valueChange)="changeValue($event)" [(ngModel)]="chang1" placeholder="Choose Body Areas ">
+          <mat-option *ngFor="let bd of bodyAreas" [value]="bd.bodyAreasId">
+            {{bd.nameArea}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-3">
+
+      </div>
+    
+  </div>  
+<div class="row">
+   <div class="col-md-4">
+
+  </div>
+  <div class="col-md-4">
+    <map name="planetmap">
+      <area (click)="head()" shape="rect" coords="385,113,308,17" alt="Sun" src="../../assets/2.png">
+      <area (click)="ribcage()" shape="rect" coords="412,222,294,115" alt="Mercury" src="../../assets/3.png">
+      <area (click)="eye()" shape="rect" coords="475,107,523,128" alt="Venus" src="../../assets/5.png">
+      <area (click)="ear()" shape="rect" coords="475,107,523,128" alt="Venus" src="../../assets/4.png">
+
+      <area (click)="arm()" shape="rect" coords="464,405,420,127" alt="Venus" src="../../assets/6.png">
+
+      <area (click)="arm()" shape="rect" coords="283,404,235,129" alt="Venus" src="../../assets/6.png">
+      <area (click)="stomach()" shape="rect" coords="289,230,408,343" alt="Venus" src="../../assets/7.png">
+      <area (click)="foot()" shape="rect" coords="401,651,297,346" alt="Venus" src="../../assets/8.png">
+
+
+
+    </map>
+
+
+    <img *ngIf="mainImg" src="../../assets/1.png" alt="Planets" usemap="#planetmap">
+
+    <img *ngIf="headShow && !ribcageShow && !eyeShow && !earShow && !armShow && !stomachShow && !footShow"
+      src="../../assets/2.png" alt="Planets" usemap="#planetmap">
+    <img *ngIf="eyeShow && !headShow && !ribcageShow && !earShow && !armShow && !stomachShow && !footShow"
+      src="../../assets/3.png" alt="Planets" usemap="#planetmap">
+
+    <img *ngIf="ribcageShow && !headShow && !eyeShow && !earShow && !armShow && !stomachShow && !footShow"
+      src="../../assets/5.png" alt="Planets" usemap="#planetmap">
+    <img *ngIf="earShow && !ribcageShow && !headShow && !eyeShow && !armShow && !stomachShow && !footShow"
+      src="../../assets/4.png" alt="Planets" usemap="#planetmap">
+
+    <img *ngIf=" armShow && !earShow && !ribcageShow && !headShow && !eyeShow && !stomachShow && !footShow"
+      src="../../assets/6.png" alt="Planets" usemap="#planetmap">
+    <img *ngIf="stomachShow && !armShow && !earShow && !ribcageShow && !headShow && !eyeShow && !footShow"
+      src="../../assets/7.png" alt="Planets" usemap="#planetmap">
+
+    <img *ngIf=" footShow &&!stomachShow && !armShow && !earShow && !ribcageShow && !headShow && !eyeShow"
+      src="../../assets/7.png" alt="Planets" usemap="#planetmap">
+
+  </div>
+  <div class="col-md-4">
+
+  </div>
+</div> -->
+<div class="example-loading-shade" style="z-index:2;" *ngIf="loading">
+
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+<mat-horizontal-stepper linear>
+  <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Body Area</ng-template>
+      <ng-template matStepperIcon="body">
+        <mat-icon>done</mat-icon>
+      </ng-template>
+
+      <div class="row">
+        <!-- <div class="col-md-5"></div>
+        <div class="col-md-4"> -->
+        <mat-form-field appearance="none" style="z-index:2;" class="nextBody">
+          <mat-select formControlName="firstCtrl" required (valueChange)="changeValue($event)"
+            [(ngModel)]="model.bodyAreasId" placeholder="Choose Body Areas ">
+            <mat-option *ngFor="let bd of bodyAreas" [value]="bd.bodyAreasId">
+              {{bd.nameArea}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <!-- </div>
+        <div class="col-md-3">
+
+        </div>
+ -->
+      </div>
+      <div>
+        <button style="z-index:2;" class="mr-sm-10 nextBtn" color="primary" mat-flat-button matStepperNext>Next</button>
+      
+      </div>
+      
+      
+      <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4" style="z-index:2;">
+          <map name="planetmap">
+            <area (click)="head()" shape="rect" coords="385,113,308,17" alt="Sun" src="../../assets/2.png">
+            <area (click)="ribcage()" shape="rect" coords="412,222,294,115" alt="Mercury" src="../../assets/3.png">
+            <area (click)="eye()" shape="rect" coords="475,107,523,128" alt="Venus" src="../../assets/5.png">
+            <area (click)="ear()" shape="rect" coords="475,107,523,128" alt="Venus" src="../../assets/4.png">
+
+            <area (click)="arm()" shape="rect" coords="464,405,420,127" alt="Venus" src="../../assets/6.png">
+
+            <area (click)="arm()" shape="rect" coords="283,404,235,129" alt="Venus" src="../../assets/6.png">
+
+            <area (click)="stomach()" shape="rect" coords="289,230,408,343" alt="Venus" src="../../assets/7.png">
+            <area (click)="foot()" shape="rect" coords="401,651,297,346" alt="Venus" src="../../assets/8.png">
+
+
+
+          </map>
+          <img *ngIf="mainImg" src="../../assets/1+2-Recovered.png" alt="Planets" usemap="#planetmap">
+
+
+          <img *ngIf="headShow && !ribcageShow && !eyeShow && !earShow && !armShow && !stomachShow && !footShow"
+            src="../../assets/2.png" alt="Planets" usemap="#planetmap">
+
+
+          <img *ngIf="eyeShow && !headShow && !ribcageShow && !earShow && !armShow && !stomachShow && !footShow"
+            src="../../assets/3.png" alt="Planets" usemap="#planetmap">
+
+
+          <img *ngIf="ribcageShow && !headShow && !eyeShow && !earShow && !armShow && !stomachShow && !footShow"
+            src="../../assets/5.png" alt="Planets" usemap="#planetmap">
+
+
+          <img *ngIf="earShow && !ribcageShow && !headShow && !eyeShow && !armShow && !stomachShow && !footShow"
+            src="../../assets/4.png" alt="Planets" usemap="#planetmap">
+
+
+          <img *ngIf=" armShow && !earShow && !ribcageShow && !headShow && !eyeShow && !stomachShow && !footShow"
+            src="../../assets/6.png" alt="Planets" usemap="#planetmap">
+
+          <img *ngIf="stomachShow && !armShow && !earShow && !ribcageShow && !headShow && !eyeShow && !footShow"
+            src="../../assets/7.png" alt="Planets" usemap="#planetmap">
+
+          <img *ngIf=" footShow &&!stomachShow && !armShow && !earShow && !ribcageShow && !headShow && !eyeShow"
+            src="../../assets/7.png" alt="Planets" usemap="#planetmap">
+
+
+
+
+
+
+
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Symptoms</ng-template>
+      <div class="row">
+        <!-- <div class="col-md-5"></div>
+        <div class="col-md-4"> -->
+        <mat-form-field appearance="none" style="z-index:2;" class="nextBody">
+          <mat-select formControlName="secondCtrl" [(ngModel)]="symtopm.symtopmId" (valueChange)="changeValue2($event)"
+            placeholder="Choose Symptoms ">
+            <mat-option *ngFor="let bd of syptoms" [value]="bd">
+              {{bd.symptomName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- </div>
+        <div class="col-md-3"></div>
+ -->
+
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="z-index:2;">
+          <img *ngIf="headache" class="sypmtomImg" src="../../assets/headache.png">
+
+        </div>
+
+        <div class="col-md-4"></div>
+
+      </div>
+      <div>
+        <button style="z-index:2;" class="mr-sm-10 nextBtn" color="primary" mat-flat-button
+          matStepperPrevious>Back</button>
+        <button style="z-index:2;" class="mr-sm-10 nextBtn" color="primary" mat-flat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Drug</ng-template>
+    <div class="row">
+      <mat-form-field appearance="none" style="z-index:2;" class="nextBtn">
+        <mat-select  [(ngModel)]="model.drugId" (valueChange)="changeValue3($event)" placeholder="Choose Drug ">
+          <mat-option *ngFor="let bd of drugs" [value]="bd.drugId">
+            {{bd.drugName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="showDrug" style="z-index:2;" class="ft-recipe">
+
+        <div class="ft-recipe__content">
+          <header class="content__header">
+            <div class="row-wrapper">
+              <h2 class="recipe-title">{{drug?.drugName}}</h2>
+              <div class="user-rating"></div>
+            </div>
+            <ul class="recipe-details">
+              <li class="recipe-details-item time"><i class="material-icons">
+                  access_time
+                </i>
+
+                <span class="value">6</span><span class="title">Hours</span></li>
+              <li class="recipe-details-item ingredients"><i class="material-icons">
+                  import_contacts
+                </i>
+
+                <span class="value">4</span><span class="title">Treatment Bulletin</span></li>
+              <li class="recipe-details-item servings"><fa-icon [icon]="capsola"></fa-icon><span
+                  class="value">1-2</span><span class="title">every-time</span></li>
+            </ul>
+          </header>
+          <footer class="content__footer"><button  mat-button (click)="drugDetails(drug.drugId)">View Bulletin</button></footer>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4"></div>
+
+
+    </div>
+
+    <div class="nextBtn">
+      <button style="z-index:2;" class="mr-sm-10 nextBtn"  mat-flat-button color="primary" matStepperPrevious>Back</button>
+      <button style="z-index:2;" class="mr-sm-10 nextBtn" color="primary" mat-flat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Add History</ng-template>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div style="z-index:2; text-align: center ;" class="col-md-4">
+      <h3 >
+        This diagnosis can be saved to help you keep track of the list of treatments you have taken to help the doctor when you visit him
+      </h3>
+    </div>
+    <div class="col-md-4"></div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+
+      </div>
+      <div class="col-md-4"></div>
+
+
+    </div>
+
+    <div class="nextBtn">
+      <button style="z-index:2;" class="mr-sm-10 nextBtn" style="z-index:2;"  mat-flat-button color="primary" matStepperPrevious>Back</button>
+      <button style="z-index:2;" class="mr-sm-10 nextBtn" style="z-index:2;" color="primary" (click)="next()" mat-flat-button>Save</button>
+    </div>
+  </mat-step>
+
+
+</mat-horizontal-stepper>
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>

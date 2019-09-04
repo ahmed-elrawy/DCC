@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootswatch/dist/litera/bootstrap.min.css';
+
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+.tab-panel {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.nav-tabs>li.open,
+.member-tabset>.nav-tabs>li:hover {
+  border-bottom: 4px solid #98FB98;
+}
+
+.member-tabset>.nav-tabs>li.open>a,
+.member-tabset>.nav-tabs>li:hover>a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+
+.member-tabset>.nav-tabs>li.open>a>i,
+.member-tabset>.nav-tabs>li:hover>a>i {
+  color: #a6a6a6;
+}
+
+.member-tabset>.nav-tabs>li.open .dropdown-menu,
+.member-tabset>.nav-tabs>li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+
+.member-tabset>.nav-tabs>li.active {
+  border-bottom: 4px solid #02B875;
+  position: relative;
+}
+
+.member-tabset>.nav-tabs>li.active>a {
+  border: 0 !important;
+  color: #333333;
+}
+
+.member-tabset>.nav-tabs>li.active>a>i {
+  color: #404040;
+}
+
+.member-tabset>.tab-content {
+  margin-top: -3px;
+  background-color: #fff;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.home {
+  background: linear-gradient(0deg, rgb(0, 55, 99, 0.5), rgb(0, 55, 99, 0.5)), url(./assets/doctor-gp-netherlands.jpg);
+  height: 650px;
+  width: 100%;
+  background-size: cover;
+  color: #ffff
+}
+
+.navbg {
+  background-color: #035aa0  !important;
+  z-index: 2;
+}
+.mat-step-header{
+  z-index: 2 !important;
+}
+.mat-step-icon-state-edit{
+  background-color: #035aa0  !important;
+  z-index: 2;
+
+}
+.mat-select-value {
+  color: #ffffff !important;
+}
+.mat-horizontal-stepper-header .mat-step-icon{
+    background: #38d436 ;
+}
+.mat-step-header .mat-step-label.mat-step-label-active{
+  color: white;
+}
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

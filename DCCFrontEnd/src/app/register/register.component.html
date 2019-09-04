@@ -1,0 +1,204 @@
+<!-- <div class="row"> 
+ 
+
+  <form  [formGroup]="form" (ngSubmit)="register()" class="form-content col-md-12">
+
+  <h2 class="text-center text-primary">Sign Up</h2>
+  <hr>
+
+  <div class="form-group">
+    <input 
+    [ngClass]="{'is-invalid':form.get('userName').errors && form.get('userName').touched}"
+     class="form-control "  type="text" formControlName="userName" placeholder="Username">
+    <div class="invalid-feedback" *ngIf="form.get('userName').hasError('required') && form.get('userName').touched" >Please Chooes a Username</div>
+    <div class="invalid-feedback" *ngIf="form.get('userName').hasError('email') && form.get('userName').touched" >In valid  Email   example : Dcc@dcc.com</div>
+
+  </div>
+ 
+  <div class="form-group">
+    <input   
+    [ngClass]="{'is-invalid':form.get('password').errors && form.get('password').touched}"
+     class="form-control" type="password" formControlName="password" placeholder="Password" >
+
+    <div class="invalid-feedback" *ngIf="form.get('password').hasError('required') && form.get('password').touched" > Passwrod Is Required   </div>
+    <div class="invalid-feedback" *ngIf="form.get('password').hasError('minlength') && form.get('password').touched" > Password Must Be At lest 6 Characters </div>
+    <div class="invalid-feedback" *ngIf="form.get('password').hasError('maxlength') && form.get('password').touched" > Password Must Be MaxLength 14 Characters </div>
+
+
+
+  </div>
+
+  <div class="form-group">
+    <input  
+    [ngClass]="{'is-invalid':form.get('confirmPassword').errors && form.get('confirmPassword').touched ||   form.get('confirmPassword').touched && form.hasError('mismatch') }"
+     class="form-control" type="password" formControlName="confirmPassword" placeholder="confirm Password" >
+     <div class="invalid-feedback" *ngIf="form.get('confirmPassword').hasError('required') && form.get('confirmPassword').touched" > Passwrod Is Required   </div>
+     <div class="invalid-feedback" *ngIf="form.hasError('mismatch') && form.get('confirmPassword').touched" > ConfirmPasswrod Don't Match Password   </div>
+
+
+  </div>
+     <div class='col-md-12'>
+  <div class="form-group">
+    <label class="control-label" style="margin-right:10px">I am a: </label>
+    <label class="radio-inline">
+      <input class="mr-3" type="radio" value="male" formControlName="gender">Male
+    </label>
+    <label class="radio-inline ml-3">
+      <input class="mr-3" type="radio" value="female" formControlName="gender">Female
+    </label>
+  </div>
+
+  
+  <div class="form-group">
+    <input [ngClass]="{'is-invalid': form.get('knownAs').errors && form.get('knownAs').touched}" class="form-control"
+      placeholder="Nickname" formControlName="knownAs">
+    <div class="invalid-feedback" *ngIf="form.get('knownAs').touched && form.get('knownAs').hasError('required')">Known as is required</div>
+  </div>
+
+
+  <div class="form-group">
+    <input [ngClass]="{'is-invalid': form.get('dateOfBirth').errors && form.get('dateOfBirth').touched}" class="form-control"
+       placeholder="Date of Birth" formControlName="dateOfBirth" type="text" bsDatepicker [bsConfig]="bsConfig" >
+  
+    <div class="invalid-feedback"  *ngIf="form.get('dateOfBirth').hasError('required') && form.get('dateOfBirth').touched">Date of Birth is required</div>
+  </div>
+
+  <div class="form-group">
+    <input [ngClass]="{'is-invalid': form.get('city').errors && form.get('city').touched}" class="form-control"
+      placeholder="City" formControlName="city">
+    <div class="invalid-feedback" *ngIf="form.get('city').touched && form.get('city').hasError('required')">City is required</div>
+  </div>
+
+  <div class="form-group">
+    <input [ngClass]="{'is-invalid': form.get('country').errors && form.get('country').touched}" class="form-control"
+      placeholder="Country" formControlName="country">
+    <div class="invalid-feedback" *ngIf="form.get('country').touched && form.get('country').hasError('required')">Country is required</div>
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-success" [disabled]="!form.valid" type="submit">Register</button>
+    <button (click)="cancel()" class="btn btn-default" type="button">Cancel</button>
+  </div>
+</div>
+</form>  
+</div> -->
+<div class="wrapper">
+  <div class="inner">
+    <img src="../../assets/DoctorForm.png" alt="" class="image-1">
+
+    <form [formGroup]="form" (ngSubmit)="register()" class="form-content row">
+      <h2 class="text-center text-primary col-12">Sign Up</h2>
+
+      <div class="form-group col-6">
+        <input IsEmailExists [ngClass]="{'is-invalid':form.get('userName').errors && form.get('userName').touched}"
+          class="form-control " type="text" formControlName="userName" placeholder="Username">
+        <div class="invalid-feedback" *ngIf="form.get('userName').hasError('required') && form.get('userName').touched">
+          Please Chooes a Username</div>
+        <div class="invalid-feedback" *ngIf="form.get('userName').hasError('email') && form.get('userName').touched">In
+          valid Email example : Dcc@dcc.com</div>
+        <div class="invalid-feedback"
+          *ngIf="form.get('userName').hasError('IsEmailExists') && form.get('userName').touched">This UserName Is
+          Already Exists </div>
+
+      </div>
+
+
+      <div class="form-group col-6">
+        <input [ngClass]="{'is-invalid': form.get('knownAs').errors && form.get('knownAs').touched}"
+          class="form-control" placeholder="Nickname" formControlName="knownAs">
+        <div class="invalid-feedback" *ngIf="form.get('knownAs').touched && form.get('knownAs').hasError('required')">
+          Known as is required</div>
+      </div>
+
+      <div class="form-group col-6">
+        <input [ngClass]="{'is-invalid':form.get('password').errors && form.get('password').touched}"
+          class="form-control" type="password" formControlName="password" placeholder="Password">
+
+        <div class="invalid-feedback" *ngIf="form.get('password').hasError('required') && form.get('password').touched">
+          Passwrod Is Required </div>
+        <div class="invalid-feedback"
+          *ngIf="form.get('password').hasError('minlength') && form.get('password').touched"> Password Must Be At lest 6
+          Characters </div>
+        <div class="invalid-feedback"
+          *ngIf="form.get('password').hasError('maxlength') && form.get('password').touched"> Password Must Be MaxLength
+          14 Characters </div>
+
+      </div>
+
+
+      <div class="form-group col-6">
+        <input
+          [ngClass]="{'is-invalid':form.get('confirmPassword').errors && form.get('confirmPassword').touched ||   form.get('confirmPassword').touched && form.hasError('mismatch') }"
+          class="form-control" type="password" formControlName="confirmPassword" placeholder="confirm Password">
+        <div class="invalid-feedback"
+          *ngIf="form.get('confirmPassword').hasError('required') && form.get('confirmPassword').touched"> Passwrod Is
+          Required </div>
+        <div class="invalid-feedback" *ngIf="form.hasError('mismatch') && form.get('confirmPassword').touched">
+          ConfirmPasswrod Don't Match Password </div>
+
+      </div>
+
+
+      <div class="form-group col-6">
+        <label class="control-label" style="margin-right:10px">I am a: </label>
+        <label class="radio-inline">
+          <input class="mr-3" type="radio" value="male" formControlName="gender">Male
+        </label>
+        <label class="radio-inline ml-3">
+          <input class="mr-3" type="radio" value="female" formControlName="gender">Female
+        </label>
+      </div>
+
+
+
+      <div class="form-group col-6">
+        <input [ngClass]="{'is-invalid': form.get('dateOfBirth').errors && form.get('dateOfBirth').touched}"
+          class="form-control" placeholder="Date of Birth" formControlName="dateOfBirth" type="text" bsDatepicker
+          [bsConfig]="bsConfig">
+
+        <div class="invalid-feedback"
+          *ngIf="form.get('dateOfBirth').hasError('required') && form.get('dateOfBirth').touched">Date of Birth is
+          required</div>
+      </div>
+
+      <div class="form-group col-6">
+        <input [ngClass]="{'is-invalid': form.get('city').errors && form.get('city').touched}" class="form-control"
+          placeholder="City" formControlName="city">
+        <div class="invalid-feedback" *ngIf="form.get('city').touched && form.get('city').hasError('required')">City is
+          required</div>
+      </div>
+
+      <div class="form-group col-6">
+        <input [ngClass]="{'is-invalid': form.get('country').errors && form.get('country').touched}"
+          class="form-control" placeholder="Country" formControlName="country">
+        <div class="invalid-feedback" *ngIf="form.get('country').touched && form.get('country').hasError('required')">
+          Country is required</div>
+      </div>
+      <div class="form-group form-check col-6">
+        <input [ngModelOptions]="{standalone: true}" [(ngModel)]="check" (change)="showSpech($event,check)"
+          type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">I'm a Doctor</label>
+      </div>
+      <div *ngIf="check" class="form-group   col-6">
+        <select
+        [ngClass]="{'is-invalid': form.get('specialization').errors && form.get('specialization').touched}"
+        required formControlName="specialization" class="form-control form-control-sm">
+          <option value="" selected disabled>Select Specialty </option>
+
+          <option *ngFor="let spc of specialization" [value]="spc">{{spc}}</option>
+        </select>
+        <div class="invalid-feedback" *ngIf="form.get('specialization').touched && form.get('specialization').hasError('required')">
+            Specialization is required</div>
+      </div>
+
+
+      <button type="submit" >
+        <span>Register</span>
+      </button>
+      <h6 class='hint'>already have an account? login here</h6>
+      <!-- <button (click)="cancel()" class="btn btn-default" type="button">Cancel</button> -->
+    </form>
+    <img src="../../assets/image-2.png" alt="" class="image-2">
+  </div>
+
+</div>

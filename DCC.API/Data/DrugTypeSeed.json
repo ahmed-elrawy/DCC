@@ -1,0 +1,20 @@
+[
+    {
+        "DrugTypeName": "Oralroute"
+    },
+    {
+        "DrugTypeName": "Injections"
+    },
+    {
+        "DrugTypeName": "Inhalation"
+    },
+    {
+        "DrugTypeName": "localized"
+    },
+    {
+        "DrugTypeName": "Suppositories"
+    },
+    {
+        "DrugTypeName": "Drink"
+    }
+]

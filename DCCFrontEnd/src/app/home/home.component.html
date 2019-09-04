@@ -1,0 +1,53 @@
+   
+          <div class="example-loading-shade"
+          *ngIf="loading">
+          
+      <mat-spinner *ngIf="loading"></mat-spinner>
+      </div>
+<div  class="container mt-5">
+  <div *ngIf="!registerMode" style="text-align: center">
+    <!-- <h1> We Are Your Online Doctors <fa-icon [icon]="faUserMd"></fa-icon> </h1>
+    <h5>Find Your Medication <fa-icon [icon]="faCapsules"></fa-icon> 
+     </h5>
+    <p class="lead">Find the Right Medication For Your Status ... All you need to do is sign up!</p>
+    <div class="text-center ">
+       <button *ngIf="!authService.loggedIn()" type="button" class=" mr-1 btn btn-primary" (click)="registerToggle()">Register</button>
+      <button class="btn btn-info  ">Learn more</button>
+    </div> -->
+    <carousel>
+        <h2>DCC Application </h2>
+
+      <slide>
+        <div class="text-center py-5 text-white">
+          <div class="lead">
+            <h3>We Are Your Online Doctors <fa-icon [icon]="faUserMd"></fa-icon></h3>
+           </div>
+        </div>
+      </slide>
+      <slide>
+        <div class="text-center py-5 text-white">
+           <div class="lead">
+            <h3>Find the Right Medication For Your Status</h3>
+            <p>All you need to do is sign up</p>
+          </div>
+        </div>
+      </slide>
+     
+    </carousel> 
+    <div class="text-center ">
+      <!-- <button *ngIf="!authService.loggedIn()" type="button" class=" mr-1 btn btn-primary" (click)="registerToggle()">Register</button> -->
+           <button *ngIf="!authService.loggedIn()" type="button" class=" mr-1 btn btn-primary"  [routerLink]="['/register']">Register</button>  
+
+     <button class="btn btn-info  ">Learn more</button>
+   </div>
+  </div>
+
+  <div *ngIf="registerMode" class="container">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <!-- <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register> -->
+      </div>
+    </div>
+  </div>
+</div>
+ 
